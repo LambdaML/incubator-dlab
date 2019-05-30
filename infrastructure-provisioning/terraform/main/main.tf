@@ -5,14 +5,6 @@ provider "google" {
   zone        = "${var.zone_var}"
 }
 
-#module "service_accounts" {
-#  source = "../modules/global"
-#}
-
-module "vpc" {
-  source = "../modules/global"
-}
-
 module "ssn" {
   source = "../modules/ssn"
 }

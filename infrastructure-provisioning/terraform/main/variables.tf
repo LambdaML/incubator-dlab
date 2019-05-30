@@ -3,18 +3,13 @@ variable "project_var" {
 }
 
 variable "project_name_var" {
-  default = "dem-test-terraform"
+  default = "dem-test-terraform2"
 }
 
-variable "region" {
+variable "region_var" {
   default = "us-east1"
 }
 
-variable "zone" {
+variable "zone_var" {
   default = "us-east1-c"
-}
-
-
-variable "image_name" {
-  default = "ubuntu-1604-xenial-v20170721"
 }

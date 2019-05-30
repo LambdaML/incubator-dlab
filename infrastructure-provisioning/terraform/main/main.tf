@@ -1,20 +1,18 @@
 provider "google" {
-  source = "../modules/global"
-  project = "${var.project}"
-  credentials = "${var.credentials}"
-  region = "${var.region}"
+  version     = "~> 2.7"
+  project     = "${var.project_var}"
+  region      = "${var.region_var}"
+  zone        = "${var.zone_var}"
 }
-module "service_accounts" {
-  source = "../modules/global"
-  service_name = "${var.project}"
-}
+
+#module "service_accounts" {
+#  source = "../modules/global"
+#}
+
 module "vpc" {
   source = "../modules/global"
-  var_ssn_public_subnet = "${var.ssn_public_subnet}"
-  var_ssn_private_subnet = "${var.ssn_private_subnet}"
 }
+
 module "ssn" {
   source = "../modules/ssn"
-  var_ssn_public_subnet = "${var.ssn_public_subnet}"
-  var_ssn_private_subnet = "${var.ssn_private_subnet}"
 }
